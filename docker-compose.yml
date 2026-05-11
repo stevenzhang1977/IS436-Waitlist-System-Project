@@ -1,0 +1,69 @@
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: waitlist_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_DATABASE: waitlist_db
+      MYSQL_USER: waitlist_user
+      MYSQL_PASSWORD: waitlist_pass
+    ports:
+      - "3308:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./init-db:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-uroot", "-proot123"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+    container_name: waitlist_backend
+    restart: unless-stopped
+    ports:
+      - "5055:5055"
+    volumes:
+      - ./backend:/app
+      - /app/node_modules
+    env_file:
+      - ./backend/.env
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_USER: waitlist_user
+      DB_PASSWORD: waitlist_pass
+      DB_NAME: waitlist_db
+      JWT_SECRET: dev_secret_change_later
+      MAILJET_API_KEY: 943a926eec18ec7ddff9a35a64731968
+      MAILJET_SECRET_KEY: 4c504175e27bd458e85f0c484a202490
+      MAILJET_FROM_EMAIL: sunset.tea.notification@gmail.com
+      MAILJET_FROM_NAME: Sunset Tea
+    depends_on:
+      mysql:
+        condition: service_healthy
+    command: npm run dev
+
+  frontend:
+    build:
+      context: ./frontend
+    container_name: waitlist_frontend
+    restart: unless-stopped
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+      VITE_API_URL: http://localhost:5055
+      VITE_SOCKET_URL: http://localhost:5055
+    depends_on:
+      - backend
+    command: npm run dev -- --host 0.0.0.0
+
+volumes:
+  db_data:

@@ -1,0 +1,447 @@
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Manrope:wght@400;500;600;700&display=swap");
+
+body {
+  margin: 0;
+  background-color: #f4f6f8;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+}
+
+/* Login Page */
+.login-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fff3e0, #e8f5e9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 430px;
+  background: white;
+  border-radius: 18px;
+  padding: 35px;
+}
+
+/* Dashboard Layout */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 30px;
+  overflow-x: auto;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 260px;
+  background-color: #263238;
+  color: white;
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h2 {
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.sidebar-brand {
+  border: none;
+  background: transparent;
+  color: #fff;
+  text-align: left;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  font-weight: 700;
+  padding: 0;
+}
+
+.sidebar-brand:hover {
+  color: #ffe0b2;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sidebar-nav-button {
+  width: 100%;
+  border: none;
+  background: transparent;
+  color: #cfd8dc;
+  text-align: left;
+  padding: 11px 12px;
+  border-radius: 10px;
+}
+
+.sidebar-nav-button:hover,
+.sidebar-nav-button.active {
+  background-color: #37474f;
+  color: white;
+}
+
+.sidebar-user {
+  margin-top: auto;
+  margin-bottom: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  background-color: #37474f;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-user small {
+  color: #cfd8dc;
+}
+
+.sidebar-user strong {
+  color: white;
+}
+
+.logout-btn {
+  border: none;
+  background: transparent;
+  color: #ffcdd2;
+  text-align: left;
+  padding: 11px 12px;
+  border-radius: 10px;
+}
+
+.logout-btn:hover {
+  background-color: #37474f;
+}
+
+/* Dashboard Header */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.dashboard-header h1 {
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.dashboard-header p {
+  color: #6c757d;
+  margin-bottom: 0;
+}
+
+/* Summary Cards */
+.summary-card {
+  background: white;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+}
+
+.summary-card p {
+  margin-bottom: 6px;
+  color: #6c757d;
+}
+
+.summary-card h2 {
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+/* Queue Position Circle */
+.queue-position {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background-color: #e9ecef;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+/* Notifications table message column */
+.notification-message {
+  max-width: 350px;
+  white-space: normal;
+}
+
+/* Customer Public Page */
+.customer-page {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 40px 20px;
+}
+
+.customer-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255, 146, 49, 0.2), rgba(17, 6, 1, 0.58));
+}
+
+.customer-content {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.customer-topbar {
+  text-align: center;
+  color: #ffedd9;
+  margin-bottom: 28px;
+}
+
+.customer-brand-mark {
+  font-size: 2rem;
+  margin-bottom: 2px;
+}
+
+.customer-topbar h1 {
+  margin: 0;
+  font-size: clamp(2.8rem, 9vw, 6rem);
+  line-height: 1;
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.customer-topbar p {
+  margin: 14px 0 0;
+  letter-spacing: 0.2rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.customer-card {
+  width: 100%;
+  border-radius: 28px;
+  padding: 36px;
+  background: linear-gradient(155deg, rgba(77, 36, 17, 0.64), rgba(23, 11, 8, 0.66));
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff2e0;
+}
+
+.customer-card h2 {
+  color: #fff4e6;
+  text-transform: uppercase;
+  letter-spacing: 0.08rem;
+  font-size: 1.52rem;
+  margin: 0;
+}
+
+.customer-subtitle {
+  color: #ffe3c6;
+  opacity: 0.9;
+}
+
+.customer-card .form-label {
+  color: #ffe5cb;
+  font-weight: 500;
+}
+
+.customer-input {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.32);
+  color: #fff3e2;
+  padding: 0.72rem 0.9rem;
+}
+
+.customer-input:focus {
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff7f0;
+  border-color: rgba(255, 194, 136, 0.95);
+  box-shadow: 0 0 0 0.2rem rgba(255, 153, 52, 0.2);
+}
+
+.customer-input::placeholder {
+  color: rgba(255, 236, 217, 0.65);
+}
+
+.customer-input[type="date"]::-webkit-calendar-picker-indicator,
+.customer-input[type="time"]::-webkit-calendar-picker-indicator,
+.customer-input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(1) brightness(1.15);
+  opacity: 0.95;
+  cursor: pointer;
+}
+
+.customer-input option {
+  color: #281305;
+}
+
+.customer-mode-switch {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.customer-main-btn {
+  background: linear-gradient(180deg, #f4a25f, #ea8c45);
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.03rem;
+  padding: 10px 16px;
+}
+
+.customer-main-btn:hover {
+  background: linear-gradient(180deg, #f7ab68, #ef924f);
+  color: #fff;
+}
+
+.customer-reserve-btn {
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  color: #2d170b;
+  font-weight: 700;
+  letter-spacing: 0.03rem;
+  padding: 10px 16px;
+}
+
+.customer-reserve-btn:hover {
+  background: #fff6eb;
+  border-color: #fff6eb;
+  color: #2d170b;
+}
+
+.customer-outline-btn,
+.customer-ghost-btn,
+.customer-outline-btn-danger {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.46);
+  color: #ffe5cd;
+}
+
+.customer-outline-btn:hover,
+.customer-ghost-btn:hover {
+  border-color: #ffcb93;
+  color: #fff6ec;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.customer-outline-btn-danger:hover {
+  border-color: #ff9f96;
+  color: #ffeceb;
+  background: rgba(255, 123, 107, 0.12);
+}
+
+.customer-card .alert {
+  border: none;
+}
+
+.customer-card .alert-success {
+  background: rgba(105, 227, 178, 0.2);
+  color: #dbffee;
+}
+
+.customer-card .alert-danger {
+  background: rgba(255, 125, 125, 0.2);
+  color: #ffe4e4;
+}
+
+.customer-queue-card {
+  border: 1px solid rgba(255, 210, 170, 0.45);
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 18px;
+  background: rgba(35, 17, 8, 0.45);
+}
+
+.customer-queue-header h3 {
+  margin: 0 0 4px;
+  color: #fff2df;
+  font-size: 1.55rem;
+}
+
+.customer-queue-header p {
+  margin: 0 0 14px;
+  color: #ffe6cc;
+}
+
+.customer-queue-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.customer-queue-label {
+  margin: 0 0 8px;
+  color: #ffe2c4;
+  font-weight: 600;
+}
+
+.customer-queue-value {
+  min-height: 88px;
+  border: 1px solid rgba(255, 237, 219, 0.5);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: 0.04rem;
+  color: #fff6ed;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.customer-queue-position {
+  border-color: rgba(197, 229, 153, 0.75);
+}
+
+.customer-queue-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+/* Responsive Layout */
+@media (max-width: 900px) {
+  .dashboard-layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .customer-page {
+    padding: 24px 14px;
+  }
+
+  .customer-card {
+    padding: 24px 16px;
+    border-radius: 20px;
+  }
+
+  .customer-topbar p {
+    letter-spacing: 0.08rem;
+    font-size: 0.76rem;
+  }
+
+  .customer-queue-stats {
+    grid-template-columns: 1fr;
+  }
+}
